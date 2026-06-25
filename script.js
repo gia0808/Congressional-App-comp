@@ -1,62 +1,28 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #06172e, #0a2e5d);
-  color: white;
-  text-align: center;
+function startQuiz() {
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
 }
 
-section {
-  min-height: 100vh;
-  padding: 80px 20px;
+function showResult(choice) {
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("result").classList.remove("hidden");
+
+  let result = "";
+
+  if (choice === "space") {
+    result = "🔭 You should visit Space Odyssey and watch an IMAX space film.";
+  } else if (choice === "dinosaurs") {
+    result = "🦖 You should visit Prehistoric Journey and explore fossils.";
+  } else if (choice === "gems") {
+    result = "💎 You should visit Gems & Minerals and see the sparkling collection.";
+  } else if (choice === "animals") {
+    result = "🐾 You should visit wildlife exhibits and learn about ecosystems.";
+  }
+
+  document.getElementById("recommendation").innerHTML = result;
 }
 
-h1 {
-  font-size: 70px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 42px;
-}
-
-p {
-  font-size: 24px;
-  color: #d9e6f2;
-}
-
-button {
-  margin: 15px;
-  padding: 18px 32px;
-  font-size: 20px;
-  border: none;
-  border-radius: 18px;
-  background: white;
-  color: #0a2e5d;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.hidden {
-  display: none;
-}
-
-#recommendation {
-  background: white;
-  color: #0a2e5d;
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 25px;
-  font-size: 22px;
+function restart() {
+  document.getElementById("result").classList.add("hidden");
+  document.getElementById("home").classList.remove("hidden");
 }
