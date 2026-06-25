@@ -1,31 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MuseumMatch</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="hero">
-  <h1>MuseumMatch</h1>
-  <p>Find your perfect exhibit or IMAX experience.</p>
-  <button onclick="startQuiz()">Start Your Match</button>
-</div>
+  <main class="app">
+    <section id="home" class="screen">
+      <p class="tag">DMNS Experience Planner</p>
+      <h1>MuseumMatch</h1>
+      <p class="subtitle">Find your perfect exhibit or IMAX experience.</p>
+      <button onclick="startQuiz()">Start Your Match</button>
+    </section>
 
-<div id="quiz" class="hidden card">
-  <h2>What kind of adventure do you want?</h2>
-  <button onclick="showResult('space')">🌌 Space & Stars</button>
-  <button onclick="showResult('dino')">🦖 Dinosaurs & Fossils</button>
-  <button onclick="showResult('gems')">💎 Gems & Minerals</button>
-  <button onclick="showResult('animals')">🐾 Animals & Nature</button>
-</div>
+    <section id="quiz" class="screen hidden">
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
 
-<div id="result" class="hidden card">
-  <h2>Your Museum Match</h2>
-  <p id="answer"></p>
-  <button onclick="restart()">Try Again</button>
-</div>
+      <p id="questionNumber"></p>
+      <h2 id="questionText"></h2>
+      <div id="answerButtons"></div>
+    </section>
 
-<script src="script.js"></script>
+    <section id="result" class="screen hidden">
+      <p class="tag">Your Perfect Match</p>
+      <h1 id="matchTitle"></h1>
+      <div class="score" id="matchScore"></div>
+      <p id="matchDescription"></p>
+
+      <div class="plan">
+        <h3>Your Visit Plan</h3>
+        <p id="visitPlan"></p>
+      </div>
+
+      <button onclick="restart()">Take Quiz Again</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
