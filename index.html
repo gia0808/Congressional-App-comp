@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MuseumMatch</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section id="home">
-    <h1>MuseumMatch</h1>
-    <p>Your personalized museum adventure starts here.</p>
-    <button onclick="startQuiz()">Start Quiz</button>
-  </section>
+<div class="hero">
+  <h1>MuseumMatch</h1>
+  <p>Find your perfect exhibit or IMAX experience.</p>
+  <button onclick="startQuiz()">Start Your Match</button>
+</div>
 
-  <section id="quiz" class="hidden">
-    <h2>What interests you most?</h2>
+<div id="quiz" class="hidden card">
+  <h2>What kind of adventure do you want?</h2>
+  <button onclick="showResult('space')">🌌 Space & Stars</button>
+  <button onclick="showResult('dino')">🦖 Dinosaurs & Fossils</button>
+  <button onclick="showResult('gems')">💎 Gems & Minerals</button>
+  <button onclick="showResult('animals')">🐾 Animals & Nature</button>
+</div>
 
-    <div class="cards">
-      <button onclick="showResult('space')">🔭 Space</button>
-      <button onclick="showResult('dinosaurs')">🦖 Dinosaurs</button>
-      <button onclick="showResult('gems')">💎 Gems & Minerals</button>
-      <button onclick="showResult('animals')">🐾 Animals</button>
-    </div>
-  </section>
+<div id="result" class="hidden card">
+  <h2>Your Museum Match</h2>
+  <p id="answer"></p>
+  <button onclick="restart()">Try Again</button>
+</div>
 
-  <section id="result" class="hidden">
-    <h2>Your Perfect Match</h2>
-    <div id="recommendation"></div>
-    <button onclick="restart()">Start Over</button>
-  </section>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
