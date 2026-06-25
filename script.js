@@ -1,5 +1,5 @@
 function startQuiz() {
-  document.getElementById("home").classList.add("hidden");
+  document.querySelector(".hero").style.display = "none";
   document.getElementById("quiz").classList.remove("hidden");
 }
 
@@ -7,22 +7,28 @@ function showResult(choice) {
   document.getElementById("quiz").classList.add("hidden");
   document.getElementById("result").classList.remove("hidden");
 
-  let result = "";
+  let answer = "";
 
   if (choice === "space") {
-    result = "🔭 You should visit Space Odyssey and watch an IMAX space film.";
-  } else if (choice === "dinosaurs") {
-    result = "🦖 You should visit Prehistoric Journey and explore fossils.";
-  } else if (choice === "gems") {
-    result = "💎 You should visit Gems & Minerals and see the sparkling collection.";
-  } else if (choice === "animals") {
-    result = "🐾 You should visit wildlife exhibits and learn about ecosystems.";
+    answer = "🌌 You should visit Space Odyssey and watch an IMAX space film. Perfect for curious visitors who like big questions and immersive visuals.";
   }
 
-  document.getElementById("recommendation").innerHTML = result;
+  if (choice === "dino") {
+    answer = "🦖 You should visit Prehistoric Journey. This is best for visitors who love fossils, ancient life, and dramatic museum experiences.";
+  }
+
+  if (choice === "gems") {
+    answer = "💎 You should visit Gems & Minerals. This is perfect if you want something beautiful, colorful, and visually impressive.";
+  }
+
+  if (choice === "animals") {
+    answer = "🐾 You should explore the wildlife exhibits. This is best for visitors who like nature, ecosystems, and real-world science.";
+  }
+
+  document.getElementById("answer").innerText = answer;
 }
 
 function restart() {
   document.getElementById("result").classList.add("hidden");
-  document.getElementById("home").classList.remove("hidden");
+  document.querySelector(".hero").style.display = "block";
 }
