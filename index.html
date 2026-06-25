@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MuseumMatch</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuseumMatch</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+  <section id="home">
     <h1>MuseumMatch</h1>
-
     <p>Your personalized museum adventure starts here.</p>
+    <button onclick="startQuiz()">Start Quiz</button>
+  </section>
 
-    <button>Start Quiz</button>
+  <section id="quiz" class="hidden">
+    <h2>What interests you most?</h2>
 
-    <script src="script.js"></script>
+    <div class="cards">
+      <button onclick="showResult('space')">🔭 Space</button>
+      <button onclick="showResult('dinosaurs')">🦖 Dinosaurs</button>
+      <button onclick="showResult('gems')">💎 Gems & Minerals</button>
+      <button onclick="showResult('animals')">🐾 Animals</button>
+    </div>
+  </section>
 
+  <section id="result" class="hidden">
+    <h2>Your Perfect Match</h2>
+    <div id="recommendation"></div>
+    <button onclick="restart()">Start Over</button>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
