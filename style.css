@@ -1,51 +1,121 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #071b3a, #0f766e, #f59e0b);
+  background: linear-gradient(135deg, #06172e, #0f766e, #f59e0b);
   color: white;
   text-align: center;
 }
 
-.hero {
-  padding: 120px 20px;
+.app {
+  min-height: 100vh;
+}
+
+.screen {
+  min-height: 100vh;
+  padding: 80px 25px;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.tag {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fde68a;
+  font-weight: bold;
 }
 
 h1 {
-  font-size: 75px;
-  margin-bottom: 10px;
+  font-size: 70px;
+  margin: 15px 0;
 }
 
-p {
+h2 {
+  font-size: 38px;
+  max-width: 800px;
+  margin: 25px auto;
+}
+
+.subtitle {
   font-size: 24px;
+  color: #e0f2fe;
 }
 
 button {
   margin: 12px;
   padding: 18px 28px;
   border: none;
-  border-radius: 20px;
+  border-radius: 22px;
   font-size: 18px;
   background: white;
-  color: #071b3a;
+  color: #06172e;
   cursor: pointer;
   font-weight: bold;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 button:hover {
-  transform: scale(1.06);
+  transform: scale(1.05);
   background: #fef3c7;
 }
 
-.card {
-  background: rgba(255,255,255,0.18);
-  margin: 40px auto;
-  padding: 35px;
+#answerButtons {
+  max-width: 850px;
+  margin: auto;
+}
+
+.progress {
   width: 80%;
   max-width: 700px;
-  border-radius: 30px;
+  height: 14px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 20px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: #fde68a;
+  transition: width 0.3s;
+}
+
+#questionNumber {
+  color: #d1fae5;
+  font-weight: bold;
+}
+
+.score {
+  font-size: 42px;
+  font-weight: bold;
+  background: white;
+  color: #0f766e;
+  width: fit-content;
+  margin: 25px auto;
+  padding: 18px 30px;
+  border-radius: 25px;
+}
+
+#matchDescription {
+  font-size: 23px;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.plan {
+  background: rgba(255,255,255,0.18);
+  max-width: 650px;
+  margin: 35px auto;
+  padding: 25px;
+  border-radius: 28px;
   backdrop-filter: blur(10px);
 }
 
-.hidden {
-  display: none;
+.plan p {
+  font-size: 20px;
+  line-height: 1.6;
 }
